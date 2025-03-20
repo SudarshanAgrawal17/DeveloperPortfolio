@@ -4,12 +4,36 @@ import { SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, SiGraphql, SiDocker 
 
 export default function SkillsGrid() {
   const skills = [
-    { icon: <SiReact className="w-10 h-10" />, name: "React" },
-    { icon: <SiTypescript className="w-10 h-10" />, name: "TypeScript" },
-    { icon: <SiTailwindcss className="w-10 h-10" />, name: "Tailwind CSS" },
-    { icon: <SiNodedotjs className="w-10 h-10" />, name: "Node.js" },
-    { icon: <SiGraphql className="w-10 h-10" />, name: "GraphQL" },
-    { icon: <SiDocker className="w-10 h-10" />, name: "Docker" },
+    { 
+      icon: <SiReact className="w-10 h-10 transition-colors duration-300 group-hover:text-[#61DAFB]" />, 
+      name: "React",
+      color: "#61DAFB" 
+    },
+    { 
+      icon: <SiTypescript className="w-10 h-10 transition-colors duration-300 group-hover:text-[#3178C6]" />, 
+      name: "TypeScript",
+      color: "#3178C6"
+    },
+    { 
+      icon: <SiTailwindcss className="w-10 h-10 transition-colors duration-300 group-hover:text-[#06B6D4]" />, 
+      name: "Tailwind CSS",
+      color: "#06B6D4"
+    },
+    { 
+      icon: <SiNodedotjs className="w-10 h-10 transition-colors duration-300 group-hover:text-[#339933]" />, 
+      name: "Node.js",
+      color: "#339933"
+    },
+    { 
+      icon: <SiGraphql className="w-10 h-10 transition-colors duration-300 group-hover:text-[#E10098]" />, 
+      name: "GraphQL",
+      color: "#E10098"
+    },
+    { 
+      icon: <SiDocker className="w-10 h-10 transition-colors duration-300 group-hover:text-[#2496ED]" />, 
+      name: "Docker",
+      color: "#2496ED"
+    },
   ];
 
   return (
@@ -20,8 +44,9 @@ export default function SkillsGrid() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: index * 0.1 }}
+          whileHover={{ scale: 1.05 }}
         >
-          <Card className="h-full">
+          <Card className="h-full group hover:shadow-lg transition-all duration-300">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
               {skill.icon}
               <h3 className="mt-4 font-medium">{skill.name}</h3>
