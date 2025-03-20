@@ -1,36 +1,37 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, SiPython, SiJava, SiMongodb, SiMysql, SiGithub, SiDocker, SiHtml5, SiCss3 } from "react-icons/si";
+import { DiJava, DiPython, DiHtml5, DiCss3, DiReact, DiNodejs, DiMongodb, DiMysql, DiGithub, DiDocker } from "react-icons/di";
+import { SiTailwindcss } from "react-icons/si";
 
 export default function SkillsGrid() {
   const skills = [
     { 
-      icon: <SiJava className="w-10 h-10 transition-colors duration-300 group-hover:text-[#007396]" />, 
+      icon: <DiJava className="w-10 h-10 transition-colors duration-300 group-hover:text-[#007396]" />, 
       name: "Java",
       category: "Languages"
     },
     { 
-      icon: <SiPython className="w-10 h-10 transition-colors duration-300 group-hover:text-[#3776AB]" />, 
+      icon: <DiPython className="w-10 h-10 transition-colors duration-300 group-hover:text-[#3776AB]" />, 
       name: "Python",
       category: "Languages"
     },
     { 
-      icon: <SiHtml5 className="w-10 h-10 transition-colors duration-300 group-hover:text-[#E34F26]" />, 
+      icon: <DiHtml5 className="w-10 h-10 transition-colors duration-300 group-hover:text-[#E34F26]" />, 
       name: "HTML5",
       category: "Web Development"
     },
     { 
-      icon: <SiCss3 className="w-10 h-10 transition-colors duration-300 group-hover:text-[#1572B6]" />, 
+      icon: <DiCss3 className="w-10 h-10 transition-colors duration-300 group-hover:text-[#1572B6]" />, 
       name: "CSS3",
       category: "Web Development"
     },
     { 
-      icon: <SiReact className="w-10 h-10 transition-colors duration-300 group-hover:text-[#61DAFB]" />, 
+      icon: <DiReact className="w-10 h-10 transition-colors duration-300 group-hover:text-[#61DAFB]" />, 
       name: "React.js",
       category: "Web Development"
     },
     { 
-      icon: <SiNodedotjs className="w-10 h-10 transition-colors duration-300 group-hover:text-[#339933]" />, 
+      icon: <DiNodejs className="w-10 h-10 transition-colors duration-300 group-hover:text-[#339933]" />, 
       name: "Node.js",
       category: "Web Development"
     },
@@ -40,22 +41,22 @@ export default function SkillsGrid() {
       category: "Web Development"
     },
     { 
-      icon: <SiMongodb className="w-10 h-10 transition-colors duration-300 group-hover:text-[#47A248]" />, 
+      icon: <DiMongodb className="w-10 h-10 transition-colors duration-300 group-hover:text-[#47A248]" />, 
       name: "MongoDB",
       category: "Database"
     },
     { 
-      icon: <SiMysql className="w-10 h-10 transition-colors duration-300 group-hover:text-[#4479A1]" />, 
+      icon: <DiMysql className="w-10 h-10 transition-colors duration-300 group-hover:text-[#4479A1]" />, 
       name: "MySQL",
       category: "Database"
     },
     { 
-      icon: <SiGithub className="w-10 h-10 transition-colors duration-300 group-hover:text-[#181717]" />, 
+      icon: <DiGithub className="w-10 h-10 transition-colors duration-300 group-hover:text-[#181717]" />, 
       name: "Git/GitHub",
       category: "Tools"
     },
     { 
-      icon: <SiDocker className="w-10 h-10 transition-colors duration-300 group-hover:text-[#2496ED]" />, 
+      icon: <DiDocker className="w-10 h-10 transition-colors duration-300 group-hover:text-[#2496ED]" />, 
       name: "Docker",
       category: "Tools"
     }
