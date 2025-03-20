@@ -32,7 +32,7 @@ export default function CodeElements() {
             }}
             whileHover={{
               scale: 1.2,
-              rotate: [-1, 1],
+              rotate: [-2, 2],
               transition: {
                 duration: 0.2,
                 ease: "easeOut"
@@ -44,28 +44,28 @@ export default function CodeElements() {
               repeatType: "reverse",
               delay: index * 0.1,
             }}
-            className="flex items-center justify-center cursor-pointer group"
+            className="flex items-center justify-center cursor-pointer"
           >
-            <span 
+            <motion.span 
               className="font-mono text-base md:text-lg lg:text-xl 
                 bg-gradient-to-br from-blue-500/40 via-purple-500/40 to-pink-500/40 
                 dark:from-blue-300/50 dark:via-purple-300/50 dark:to-pink-300/50 
                 bg-clip-text text-transparent
-                group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400
-                dark:group-hover:from-blue-300 dark:group-hover:via-purple-300 dark:group-hover:to-pink-300
+                hover:from-blue-400 hover:via-purple-400 hover:to-pink-400
+                dark:hover:from-blue-300 dark:hover:via-purple-300 dark:hover:to-pink-300
                 transition-all duration-300
                 hover:shadow-lg hover:shadow-primary/20 dark:hover:shadow-primary/40
                 relative
                 after:absolute after:inset-0 after:bg-gradient-to-br 
                 after:from-blue-500/0 after:via-purple-500/0 after:to-pink-500/0
                 after:opacity-0 after:transition-opacity after:duration-300
-                group-hover:after:opacity-10"
+                hover:after:opacity-10"
               style={{
                 transform: `rotate(${(index % 2) * 2 - 1}deg)`,
               }}
             >
               {snippet}
-            </span>
+            </motion.span>
           </motion.div>
         ))}
       </div>
