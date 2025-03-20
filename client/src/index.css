@@ -10,4 +10,16 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  .gradient-text-light {
+    background: linear-gradient(to right, #000000, #808080); /* Black to gray gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-text-dark {
+    background: linear-gradient(to right, #ffffff, #808080); /* White to gray gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

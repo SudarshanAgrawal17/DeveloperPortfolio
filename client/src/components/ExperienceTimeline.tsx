@@ -20,22 +20,6 @@ export default function ExperienceTimeline() {
       description: "Enhanced user experience by implementing responsive design with Tailwind CSS for React.js full-stack project. Contributed to rapid development of front-end solutions using WordPress.",
       icon: <BriefcaseIcon className="w-6 h-6" />,
       current: false
-    },
-    {
-      title: "IoT Workshop Lead",
-      company: "I.E.E.E. Student Branch",
-      date: "09/2022",
-      description: "Collaborated with a team of 6 members to conduct an IoT workshop for approximately 150 students, providing guidance and technical support.",
-      icon: <GraduationCapIcon className="w-6 h-6" />,
-      current: false
-    },
-    {
-      title: "Project Demonstration",
-      company: "NAAC Accreditation Council",
-      date: "08/2022",
-      description: "Presented an IoT-based smart dustbin as part of a team to NAAC officials, receiving positive feedback on innovation.",
-      icon: <AwardIcon className="w-6 h-6" />,
-      current: false
     }
   ];
 
