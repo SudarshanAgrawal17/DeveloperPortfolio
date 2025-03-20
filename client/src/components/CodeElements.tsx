@@ -19,86 +19,50 @@ export default function CodeElements() {
     "return (",
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
-    <>
-      {/* Top section elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-10">
-        {codeSnippets.slice(0, 5).map((snippet, index) => (
-          <motion.div
-            key={`top-${index}`}
-            className="absolute text-primary/50 font-mono text-sm"
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * (window.innerHeight / 2)
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: Math.random() * 2 + 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-          >
-            {snippet}
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Middle section elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-10 translate-y-[100vh]">
-        {codeSnippets.slice(5, 10).map((snippet, index) => (
-          <motion.div
-            key={`middle-${index}`}
-            className="absolute text-primary/50 font-mono text-sm"
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * (window.innerHeight / 2)
-            }}
-            animate={{
-              x: [0, 30, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
+    <motion.div
+      className="fixed inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 p-8 pointer-events-none select-none -z-10"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      {codeSnippets.map((snippet, index) => (
+        <motion.div
+          key={index}
+          className="flex items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: [0.2, 0.4, 0.2],
+            y: [0, -10, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: index * 0.2,
+          }}
+        >
+          <span 
+            className="text-primary/30 font-mono text-lg md:text-xl lg:text-2xl whitespace-nowrap"
+            style={{
+              transform: `rotate(${Math.random() * 10 - 5}deg)`,
             }}
           >
             {snippet}
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Bottom section elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-10 translate-y-[200vh]">
-        {codeSnippets.slice(10).map((snippet, index) => (
-          <motion.div
-            key={`bottom-${index}`}
-            className="absolute text-primary/50 font-mono text-sm"
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * (window.innerHeight / 2)
-            }}
-            animate={{
-              y: [0, 20, 0],
-              x: [0, -20, 0],
-              opacity: [0.4, 0.9, 0.4],
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-          >
-            {snippet}
-          </motion.div>
-        ))}
-      </div>
-    </>
+          </span>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 }

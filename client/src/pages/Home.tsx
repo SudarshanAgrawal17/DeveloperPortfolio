@@ -33,9 +33,10 @@ const projects = [
 export default function Home() {
   return (
     <div className="min-h-screen pt-16">
+      <CodeElements />
+
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 min-h-[80vh] flex flex-col justify-center relative overflow-hidden">
-        <CodeElements />
+      <section className="container mx-auto px-4 py-20 min-h-[80vh] flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,9 +57,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/50" />
-        <CodeElements />
+      <section id="skills" className="relative py-20">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Skills & Technologies
@@ -68,8 +67,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative container mx-auto px-4 py-20 overflow-hidden">
-        <CodeElements />
+      <section id="projects" className="relative container mx-auto px-4 py-20">
         <div className="relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Featured Projects
@@ -84,8 +82,6 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="relative py-20">
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-muted/50" />
-        <CodeElements />
         <div className="container mx-auto px-4 max-w-md relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Get in Touch
@@ -95,7 +91,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center text-muted-foreground">
+      <footer className="container mx-auto px-4 py-8 text-center text-muted-foreground relative z-10">
         <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
       </footer>
     </div>
