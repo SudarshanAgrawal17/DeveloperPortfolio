@@ -58,7 +58,8 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/50" />
-        <div className="container mx-auto px-4 relative">
+        <CodeElements />
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
@@ -67,21 +68,25 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-          Featured Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
+      <section id="projects" className="relative container mx-auto px-4 py-20 overflow-hidden">
+        <CodeElements />
+        <div className="relative z-10">
+          <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="relative py-20">
         <div className="absolute inset-0 bg-gradient-to-t from-background to-muted/50" />
-        <div className="container mx-auto px-4 max-w-md relative">
+        <CodeElements />
+        <div className="container mx-auto px-4 max-w-md relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Get in Touch
           </h2>
