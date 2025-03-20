@@ -25,6 +25,7 @@ export default function CodeElements() {
         {codeSnippets.map((snippet, index) => (
           <motion.div
             key={index}
+            className="flex items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: [0.3, 0.6, 0.3],
@@ -32,10 +33,11 @@ export default function CodeElements() {
             }}
             whileHover={{
               scale: 1.2,
-              rotate: [-2, 2],
+              zIndex: 10,
               transition: {
-                duration: 0.2,
-                ease: "easeOut"
+                type: "spring",
+                stiffness: 300,
+                damping: 10
               }
             }}
             transition={{
@@ -44,7 +46,6 @@ export default function CodeElements() {
               repeatType: "reverse",
               delay: index * 0.1,
             }}
-            className="flex items-center justify-center cursor-pointer"
           >
             <motion.span 
               className="font-mono text-base md:text-lg lg:text-xl 
@@ -59,9 +60,23 @@ export default function CodeElements() {
                 after:absolute after:inset-0 after:bg-gradient-to-br 
                 after:from-blue-500/0 after:via-purple-500/0 after:to-pink-500/0
                 after:opacity-0 after:transition-opacity after:duration-300
-                hover:after:opacity-10"
+                hover:after:opacity-10
+                hover:scale-110
+                hover:rotate-3
+                cursor-pointer"
+              whileHover={{
+                rotate: [0, -3, 3, 0],
+                scale: [1, 1.1, 1.05],
+                transition: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  times: [0, 0.2, 0.8, 1]
+                }
+              }}
               style={{
                 transform: `rotate(${(index % 2) * 2 - 1}deg)`,
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.8)",
+                filter: "brightness(1.2)"
               }}
             >
               {snippet}
