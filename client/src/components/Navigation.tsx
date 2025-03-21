@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,12 +13,30 @@ export default function Navigation() {
     { to: "contact", label: "Contact" },
   ];
 
+  const handleDownloadResume = () => {
+    const resumePath = '/Sudarshan_Agrawal_Resume.pdf';
+    console.log('Attempting to download from:', resumePath);
+    
+    // Direct download approach
+    const link = document.createElement('a');
+    link.href = resumePath;
+    link.setAttribute('download', 'Sudarshan_Agrawal_Resume.pdf');
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <nav className="fixed w-full z-50 top-0 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <ScrollLink to="home" smooth={true} duration={500} className="text-xl font-bold cursor-pointer">
-          Portfolio
-        </ScrollLink>
+        <button
+          onClick={handleDownloadResume}
+          className="flex items-center gap-2 text-xl font-bold cursor-pointer hover:text-primary transition-colors"
+        >
+          <Download size={20} />
+          Resume
+        </button>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
