@@ -5,7 +5,6 @@ import path from 'path'
 export default defineConfig({
   base: '/DeveloperPortfolio/',
   plugins: [react()],
-  root: '.',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './client/src')
@@ -13,6 +12,10 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })
